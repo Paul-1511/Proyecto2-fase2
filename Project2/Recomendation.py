@@ -55,10 +55,12 @@ else:
     else:
         games_df = pd.DataFrame([dict(record) for record in results])
 
-        # Convertir datos a formato numérico para k-NN
+        # Convertir columna 'multijugador' a numérico (0 o 1)
         games_df['multijugador'] = games_df['multijugador'].apply(lambda x: 1 if x else 0)
+
+        # Aplicar One-Hot Encoding a las columnas categóricas 'consola', 'estudio' y 'categoría'
         games_numeric = pd.get_dummies(games_df, columns=['consola', 'estudio', 'categoría'])
-        
+
         # Excluir la columna 'nombre' de los datos numéricos para el modelo
         games_numeric = games_numeric.drop(columns=['nombre'])
         
