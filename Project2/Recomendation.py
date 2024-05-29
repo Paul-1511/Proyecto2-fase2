@@ -68,16 +68,64 @@ else:
         knn = NearestNeighbors(n_neighbors=5, algorithm='auto').fit(games_numeric)
 
         # Función para hacer recomendaciones
-        def recomendar_videojuegos(nombre_juego):
-            juego_index = games_df.index[games_df['nombre'] == nombre_juego].tolist()[0]
-            distances, indices = knn.kneighbors([games_numeric.iloc[juego_index]])
-            nombres_recomendados = games_df.iloc[indices[0]]['nombre'].values
+        def recomendar_videojuegos(filtro=None, valor=None):
+            if filtro and valor:
+                if filtro == 'precio':
+                    juegos_filtrados = games_df[games_df['precio'] <= float(valor)]
+                elif filtro == 'categoría':
+                    juegos_filtrados = games_df[games_df['categoría'].str.contains(valor, case=False)]
+                elif filtro == 'consola':
+                    juegos_filtrados = games_df[games_df['consola'].str.contains(valor, case=False)]
+                else:
+                    print("Filtro no válido.")
+                    return []
+            else:
+                juegos_filtrados = games_df
+
+            if juegos_filtrados.empty:
+                print("No se encontraron juegos con los criterios especificados.")
+                return []
+
+            juegos_filtrados_numeric = pd.get_dummies(juegos_filtrados, columns=['consola', 'estudio', 'categoría'])
+            juegos_filtrados_numeric = juegos_filtrados_numeric.drop(columns=['nombre'])
+
+            n_neighbors = min(5, len(juegos_filtrados_numeric))
+            if n_neighbors == 0:
+                print("No hay suficientes juegos para recomendar.")
+                return []
+
+            knn_filtrado = NearestNeighbors(n_neighbors=n_neighbors, algorithm='auto').fit(juegos_filtrados_numeric)
+            
+            distances, indices = knn_filtrado.kneighbors(juegos_filtrados_numeric)
+            nombres_recomendados = juegos_filtrados.iloc[indices[0]]['nombre'].values
             return nombres_recomendados
 
-        # Hacer una recomendación
-        recomendaciones = recomendar_videojuegos('The Legend of Zelda: Breath of the Wild')
-        print("Juegos recomendados:", recomendaciones)
+        # Menú interactivo
+        while True:
+            print("\nMenu de Recomendaciones")
+            print("1. Recomendaciones por Precio")
+            print("2. Recomendaciones por Categoría")
+            print("3. Recomendaciones por Consola")
+            print("4. Salir")
+            choice = input("Selecciona una opción: ")
+
+            if choice == '1':
+                max_precio = input("Ingresa el precio máximo: ")
+                recomendaciones = recomendar_videojuegos(filtro='precio', valor=max_precio)
+                print("Juegos recomendados:", recomendaciones)
+            elif choice == '2':
+                categoria = input("Ingresa la categoría: ")
+                recomendaciones = recomendar_videojuegos(filtro='categoría', valor=categoria)
+                print("Juegos recomendados:", recomendaciones)
+            elif choice == '3':
+                consola = input("Ingresa la consola: ")
+                recomendaciones = recomendar_videojuegos(filtro='consola', valor=consola)
+                print("Juegos recomendados:", recomendaciones)
+            elif choice == '4':
+                print("Saliendo...")
+                break
+            else:
+                print("Opción no válida. Inténtalo de nuevo.")
 
     # Cerrar conexión
     conn.close()
-
