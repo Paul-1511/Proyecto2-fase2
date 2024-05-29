@@ -1,179 +1,179 @@
-CREATE (game1:Videojuego {
-    nombre: 'The Legend of Zelda: Breath of the Wild',
+CREATE (game21:Videojuego {
+    nombre: 'Animal Crossing: New Horizons',
     consola: 'Nintendo Switch',
     estudio: 'Nintendo',
-    categoría: 'Aventura',
-    multijugador: false,
+    categoría: 'Simulación',
+    multijugador: true,
     duración: 100,
     precio: 59.99
 })
-CREATE (game2:Videojuego {
-    nombre: 'Overwatch',
+CREATE (game22:Videojuego {
+    nombre: 'Starcraft II',
     consola: 'PC',
     estudio: 'Blizzard Entertainment',
-    categoría: 'Shooter',
+    categoría: 'Estrategia',
     multijugador: true,
-    duración: 20,
+    duración: 30,
     precio: 39.99
 })
-CREATE (game3:Videojuego {
-    nombre: 'The Witcher 3: Wild Hunt',
+CREATE (game23:Videojuego {
+    nombre: 'Cyberpunk 2077',
     consola: 'PlayStation',
     estudio: 'CD Projekt Red',
     categoría: 'RPG',
     multijugador: false,
-    duración: 150,
-    precio: 49.99
-})
-CREATE (game4:Videojuego {
-    nombre: 'Minecraft',
-    consola: 'Xbox One',
-    estudio: 'Mojang',
-    categoría: 'Sandbox',
-    multijugador: true,
-    duración: 200,
-    precio: 29.99
-})
-CREATE (game5:Videojuego {
-    nombre: 'Fortnite',
-    consola: 'PlayStation',
-    estudio: 'Epic Games',
-    categoría: 'Battle Royale',
-    multijugador: true,
-    duración: 30,
-    precio: 0.00
-})
-CREATE (game6:Videojuego {
-    nombre: 'Uncharted 4: A Thiefs End',
-    consola: 'PlayStation 4',
-    estudio: 'Naughty Dog',
-    categoría: 'Aventura',
-    multijugador: true,
-    duración: 15,
-    precio: 39.99
-})
-CREATE (game7:Videojuego {
-    nombre: 'Call of Duty: Modern Warfare',
-    consola: 'Xbox One',
-    estudio: 'Infinity Ward',
-    categoría: 'Shooter',
-    multijugador: true,
-    duración: 6,
+    duración: 100,
     precio: 59.99
 })
-CREATE (game8:Videojuego {
-    nombre: 'Final Fantasy XV',
-    consola: 'PlayStation 4',
-    estudio: 'Square Enix',
-    categoría: 'RPG',
+CREATE (game24:Videojuego {
+    nombre: 'Hades',
+    consola: 'PC',
+    estudio: 'Supergiant Games',
+    categoría: 'Roguelike',
     multijugador: false,
-    duración: 50,
-    precio: 49.99
+    duración: 25,
+    precio: 24.99
 })
-CREATE (game9:Videojuego {
-    nombre: 'Terraria',
-    consola: 'PC',
-    estudio: 'Re-Logic',
-    categoría: 'Sandbox',
-    multijugador: true,
-    duración: 100,
-    precio: 9.99
-})
-CREATE (game10:Videojuego {
-    nombre: 'Apex Legends',
-    consola: 'PC',
-    estudio: 'Respawn Entertainment',
-    categoría: 'Battle Royale',
-    multijugador: true,
-    duración: 30,
-    precio: 0.00
-})
-CREATE (game11:Videojuego {
-    nombre: 'Horizon Zero Dawn',
-    consola: 'PlayStation',
-    estudio: 'Guerrilla Games',
-    categoría: 'Aventura',
-    multijugador: false,
-    duración: 60,
-    precio: 49.99
-})
-CREATE (game12:Videojuego {
-    nombre: 'Doom Eternal',
-    consola: 'PC',
-    estudio: 'id Software',
+CREATE (game25:Videojuego {
+    nombre: 'Gears of War 5',
+    consola: 'Xbox One',
+    estudio: 'The Coalition',
     categoría: 'Shooter',
     multijugador: true,
-    duración: 15,
+    duración: 12,
     precio: 59.99
 })
-CREATE (game13:Videojuego {
-    nombre: 'Persona V',
+CREATE (game26:Videojuego {
+    nombre: 'Ghost of Tsushima',
     consola: 'PlayStation',
-    estudio: 'Atlus',
-    categoría: 'RPG',
+    estudio: 'Sucker Punch Productions',
+    categoría: 'Aventura',
     multijugador: false,
-    duración: 100,
-    precio: 49.99
-})
-CREATE (game14:Videojuego {
-    nombre: 'No Mans Sky',
-    consola: 'PC',
-    estudio: 'Hello Games',
-    categoría: 'Sandbox',
-    multijugador: true,
     duración: 50,
     precio: 59.99
 })
-CREATE (game15:Videojuego {
-    nombre: 'PUBG: Battlegrounds',
+CREATE (game27:Videojuego {
+    nombre: 'Diablo III',
     consola: 'PC',
-    estudio: 'PUBG Corporation',
-    categoría: 'Battle Royale',
+    estudio: 'Blizzard Entertainment',
+    categoría: 'RPG',
     multijugador: true,
-    duración: 30,
-    precio: 29.99
+    duración: 35,
+    precio: 19.99
 })
-CREATE (game16:Videojuego {
-    nombre: 'Assassin\'s Creed Odyssey',
+CREATE (game28:Videojuego {
+    nombre: 'Half-Life: Alyx',
     consola: 'PC',
-    estudio: 'Ubisoft',
-    categoría: 'Aventura',
+    estudio: 'Valve',
+    categoría: 'Shooter',
     multijugador: false,
-    duración: 60,
+    duración: 15,
     precio: 59.99
 })
-CREATE (game17:Videojuego {
-    nombre: 'Battlefield V',
-    consola: 'PlayStation',
-    estudio: 'DICE',
-    categoría: 'Shooter',
+CREATE (game29:Videojuego {
+    nombre: 'Sea of Thieves',
+    consola: 'Xbox One',
+    estudio: 'Rare',
+    categoría: 'Aventura',
     multijugador: true,
-    duración: 10,
+    duración: 100,
     precio: 49.99
 })
-CREATE (game18:Videojuego {
-    nombre: 'The Elder Scrolls V: Skyrim',
-    consola: 'Xbox One',
-    estudio: 'Bethesda Game Studios',
-    categoría: 'RPG',
-    multijugador: false,
-    duración: 200,
-    precio: 39.99
-})
-CREATE (game19:Videojuego {
-    nombre: 'Grand Theft Auto V',
+CREATE (game30:Videojuego {
+    nombre: 'Red Dead Redemption',
     consola: 'PlayStation',
     estudio: 'Rockstar Games',
-    categoría: 'Sandbox',
+    categoría: 'Aventura',
     multijugador: true,
-    duración: 100,
+    duración: 150,
+    precio: 59.99
+})
+CREATE (game31:Videojuego {
+    nombre: 'Splatoon',
+    consola: 'Nintendo Switch',
+    estudio: 'Nintendo',
+    categoría: 'Shooter',
+    multijugador: true,
+    duración: 20,
+    precio: 59.99
+})
+CREATE (game32:Videojuego {
+    nombre: 'Warcraft III: Reforged',
+    consola: 'PC',
+    estudio: 'Blizzard Entertainment',
+    categoría: 'Estrategia',
+    multijugador: true,
+    duración: 40,
     precio: 29.99
 })
-CREATE (game20:Videojuego {
-    nombre: 'Realm Royale',
+CREATE (game33:Videojuego {
+    nombre: 'The Witcher II: Assassins of Kings',
     consola: 'PC',
-    estudio: 'Hi-Rez Studios',
-    categoría: 'Battle Royale',
+    estudio: 'CD Projekt Red',
+    categoría: 'RPG',
+    multijugador: false,
+    duración: 50,
+    precio: 19.99
+})
+CREATE (game34:Videojuego {
+    nombre: 'Cuphead',
+    consola: 'Xbox One',
+    estudio: 'Studio MDHR',
+    categoría: 'Plataformas',
+    multijugador: true,
+    duración: 15,
+    precio: 19.99
+})
+CREATE (game35:Videojuego {
+    nombre: 'Halo Infinite',
+    consola: 'Xbox One',
+    estudio: '343 Industries',
+    categoría: 'Shooter',
+    multijugador: true,
+    duración: 20,
+    precio: 59.99
+})
+CREATE (game36:Videojuego {
+    nombre: 'Nioh II',
+    consola: 'PlayStation',
+    estudio: 'Team Ninja',
+    categoría: 'RPG',
+    multijugador: true,
+    duración: 70,
+    precio: 59.99
+})
+CREATE (game37:Videojuego {
+    nombre: 'Overcooked',
+    consola: 'PC',
+    estudio: 'Ghost Town Games',
+    categoría: 'Simulación',
+    multijugador: true,
+    duración: 10,
+    precio: 24.99
+})
+CREATE (game38:Videojuego {
+    nombre: 'Among Us',
+    consola: 'PC',
+    estudio: 'InnerSloth',
+    categoría: 'Party',
+    multijugador: true,
+    duración: 5,
+    precio: 4.99
+})
+CREATE (game39:Videojuego {
+    nombre: 'Fall Guys',
+    consola: 'PC',
+    estudio: 'Mediatonic',
+    categoría: 'Party',
+    multijugador: true,
+    duración: 10,
+    precio: 19.99
+})
+CREATE (game40:Videojuego {
+    nombre: 'Destiny',
+    consola: 'PlayStation',
+    estudio: 'Bungie',
+    categoría: 'Shooter',
     multijugador: true,
     duración: 30,
     precio: 0.00
